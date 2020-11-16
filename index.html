@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ailiv - Floriste Lieve Cortier</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="_static/css/main.css">
+
+    <!-- favicon -->
+
 </head>
 <body>
     <header>
         <nav class="nav__top">
             <ul>
-                <li class="phonenumber"><a href="tel:+3274992345">GSM <span>0474 99 23 45</span></a></li>
-                <li><a href="mailto:LIEVECORTIER@AILIV.BE">E-MAIL<span>LIEVECORTIER@AILIV.BE</span></a></li>
+                <li class="phonenumber">GSM<a href="tel:+3274992345">0474 99 23 45</a></li>
+                <li>E-MAIL<a href="mailto:LIEVECORTIER@AILIV.BE">LIEVECORTIER@AILIV.BE</a></li>
                 <li><a href="#">FACEBOOK</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
@@ -19,16 +25,24 @@
             <div class="nav__brand">
                 <a href="#"><img src="https://uploads-ssl.webflow.com/5f5248794bbeccf44d459b82/5f524d3da2ea757d10fbed70_ailiv-logo.svg" alt="logo Ailiv floriste"></a>
             </div>
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">gepersonaliseerd bloemwerk</a></li>
-                <li><a href="#">trouwboeketten</a></li>
-                <li><a href="#">seizoensdecoratie</a></li>
-                <li><a href="#">rouwwerk</a></li>
-                <li><a href="#">aankleding</a></li>
-                <li><a href="#">webshop</a></li>
-                <li class="nav__basket"><a href="#">Winkelmandje <span>0</span></a></li>
+            <ul class="nav_items">
+                <li class="nav_item"><a href="#">home</a></li>
+                <li class="nav_item"><a href="#">gepersonaliseerd bloemwerk</a></li>
+                <li class="nav_item"><a href="#">trouwboeketten</a></li>
+                <li class="nav_item"><a href="#">seizoensdecoratie</a></li>
+                <li class="nav_item"><a href="#">rouwwerk</a></li>
+                <li class="nav_item"><a href="#">aankleding</a></li>
+                <li class="nav_item"><a href="#">webshop</a></li>
+                <li class="nav__basket">
+                    <a href="#">
+                        <p>Winkelmandje</p>
+                        <div class="basket-amount">0</div>
+                    </a>
+                </li>
             </ul>
+            <div class="hamburger-icon">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/1828/1828859.svg" alt="">
+            </div>
         </nav>
     </header>
     <main>
@@ -65,15 +79,15 @@
         </section>
         <article class="card--container">
             <section>
-                <img src="#" alt="">
+                <img src="https://uploads-ssl.webflow.com/5f5248796f0e6e75b273d0e2/5f5b688941ef3b4a015b5e77_thomas-ae-295NLwGdrKM-unsplash.jpg" alt="">
                 <h4>Trouwboeketten</h4>
             </section>
             <section>
-                <img src="#" alt="">
+                <img src="https://uploads-ssl.webflow.com/5f5248796f0e6e75b273d0e2/5f5b688941ef3b4a015b5e77_thomas-ae-295NLwGdrKM-unsplash.jpg" alt="">
                 <h4>seizoensdecoratie</h4>
             </section>
             <section>
-                <img src="#" alt="">
+                <img src="https://uploads-ssl.webflow.com/5f5248796f0e6e75b273d0e2/5f5b688941ef3b4a015b5e77_thomas-ae-295NLwGdrKM-unsplash.jpg" alt="">
                 <h4>rouwwerk op maat</h4>
             </section>
         </article>
@@ -109,17 +123,17 @@
         </article>
         <article class="card--container">
             <section>
-                <img src="#" alt="">
+                <img src="https://uploads-ssl.webflow.com/5f5248796f0e6e75b273d0e2/5f5b688941ef3b4a015b5e77_thomas-ae-295NLwGdrKM-unsplash.jpg" alt="">
                 <h4>Boeket small</h4>
                 <p>€30</p>
             </section>
             <section>
-                <img src="#" alt="">
+                <img src="https://uploads-ssl.webflow.com/5f5248796f0e6e75b273d0e2/5f5b688941ef3b4a015b5e77_thomas-ae-295NLwGdrKM-unsplash.jpg" alt="">
                 <h4>Boeket medium</h4>
                 <p>€40</p>
             </section>
             <section>
-                <img src="#" alt="">
+                <img src="https://uploads-ssl.webflow.com/5f5248796f0e6e75b273d0e2/5f5b688941ef3b4a015b5e77_thomas-ae-295NLwGdrKM-unsplash.jpg" alt="">
                 <h4>Boeket large</h4>
                 <p>€50</p>
             </section>
@@ -156,5 +170,6 @@
             </div>
         </div>
     </footer>
+    <script src="_static/js/main.js"></script>
 </body>
 </html>
