@@ -377,19 +377,23 @@ p {
 
 .card {
     margin: 1rem;
-    width: 12rem;
+    width: 20rem;
 
-    flex-grow: 1;
-}
+    flex-grow: 0;
 
-.card a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+.card a {
+    
+}
+
 .card img {
-    width: 100%;
+    /* width: 100%; */
+
+    width: 20rem;
     margin-bottom: 1rem;
 }
 
