@@ -1,0 +1,15 @@
+@font-face{
+    font-family: 'adelle';
+    src: url("../media/fonts/adelle-sans-regular-webfont.woff") format("woff"),
+    url("../media/fonts/adelle-sans-regular-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'adelle';
+    src: url("../media/fonts/adelle-sans-bold-webfont.woff") format("woff"),
+    url("../media/fonts/adelle-sans-bold-webfont.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}

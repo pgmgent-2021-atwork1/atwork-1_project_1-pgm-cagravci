@@ -1,8 +1,15 @@
+@import url("fonts.css");
+
 * {
     padding: 0;
     margin: 0;
 
     box-sizing: border-box;
+}
+
+body{
+    font-family: 'adelle';
+
 }
 
 .center-width {
@@ -33,9 +40,11 @@ a {
     justify-content: center;
     flex-wrap: wrap;
 
+    font-weight: normal;
     font-size: 1rem;
     padding: 1rem 0;
 }
+
 @media (min-width: 1000px) {
     .nav__top ul {
         justify-content: right;
@@ -52,6 +61,7 @@ a {
 
 .nav__top a:hover {
     color: #00b62f;
+    transition: 0.2s ease;
 }
 
 .nav__bottom {
@@ -66,6 +76,7 @@ a {
 
 .nav__brand:hover {
     opacity: 0.8;
+    transition: 0.2s ease;
 }
 
 .nav__brand img {
@@ -117,10 +128,12 @@ a {
 }
 .nav_item.current:hover a{
         color: rgba(0, 0, 0, 0.6);
+        transition: 0.2s ease;
     }
 
 .nav_item:hover a {
     color: #00b62f;
+    transition: 0.2s ease;
 }
 
 @media (min-width: 1000px) {
@@ -136,6 +149,8 @@ a {
     border-radius: 15px;
     padding: 0.6rem 1rem;
 
+    font-family: 'adelle';
+    font-weight: normal;
 }
 
 .nav__basket:hover {
@@ -207,6 +222,7 @@ h4 {
 
 h4:hover {
     border-bottom: 1px solid rgba(193, 20, 98, 1);
+    transition: 0.2s ease;
 }
 
 p {
@@ -330,7 +346,8 @@ p {
 }
 
 .actionbutton:hover {
-    background-color: rgba(196, 48, 112, 0.2);
+    background-color: rgba(147, 198, 131,0.2);
+    transition: 0.2s ease;
 }
 
 .arrow {
