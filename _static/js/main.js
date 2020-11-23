@@ -11,7 +11,7 @@ created: 15/11/2020
 
 
             //chashe html elements
-            this.casheElements();
+            this.cacheElements();
             //add click events 
             this.registerListeners();
 
@@ -27,7 +27,7 @@ created: 15/11/2020
                 isHidden = true;
                 };
             });
-            //if the navbar is hidden, the click needs to show the navbar. else is needs to hide is.
+            //if the navbar is hidden, the click needs to show the navbar. else it needs to hide is.
             if (isHidden) {
                 this.$navItems.className = "nav_items";
             } else{
@@ -35,7 +35,7 @@ created: 15/11/2020
 
             }
         },
-        casheElements() {
+        cacheElements() {
             this.$hamburger = document.querySelector(".hamburger-icon");
             this.$navItems = document.querySelector(".nav_items");
         },
@@ -43,7 +43,8 @@ created: 15/11/2020
             this.$hamburger.addEventListener('click', (event) => {
                 this.showNav();
             });
-        }
+        },
     };
     app.initialize();
 })();
+
