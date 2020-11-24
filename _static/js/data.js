@@ -45,3 +45,10 @@ const products = [
 
     },
 ]
+
+let seasons = [
+    {
+        season: "lente",
+        image: ""
+    }
+]

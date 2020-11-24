@@ -20,18 +20,18 @@
         <nav class="nav__bottom">
             <div class="nav__brand">
                 <a href="../index.html"><img
-                        src="../../_static/media/logo.svg"
+                        src="../_static/media/logo.svg"
                         alt="logo Ailiv floriste"></a>
             </div>
            
             <ul class="nav_items hidden">
-                <li class="nav_item"><a href="../../index.html">home</a></li>
+                <li class="nav_item"><a href="../index.html">home</a></li>
                 <li class="nav_item"><a href="#">gepersonaliseerd bloemwerk</a></li>
                 <li class="nav_item"><a href="#">trouwboeketten</a></li>
-                <li class="nav_item"><a href="#">seizoensdecoratie</a></li>
+                <li class="nav_item"><a href="../dienst_seizoensdecoratie/index.html">seizoensdecoratie</a></li>
                 <li class="nav_item"><a href="#">rouwwerk</a></li>
                 <li class="nav_item"><a href="#">aankleding</a></li>
-                <li class="nav_item current"><a href="../../webshop/index.html">webshop</a></li>
+                <li class="nav_item"><a href="../webshop/index.html">webshop</a></li>
             </ul>
             <div class="nav__basket">
                 <a href="#">
@@ -48,8 +48,59 @@
     </header>
     <main class="center-width">
         <article class="product">
-            <img src="" alt="">
-            <h2></h2>
+            <section class="product-info">
+                <div class="product-info-img">
+                    <img src="../_static/media/images/flowers_webshop_small.png" alt="">
+                </div>
+                <div class="product-info-description">
+                    <h2>boeket medium</h2>
+                    <p>€40</p>
+                </div>
+            </section>
+            <section class="form">
+                <form action="#" method="POST">
+                    <label for="color_select">kleur</label>
+                    <select name="colors" id="color_select" required="required">
+                        <option value="" disabled selected>Keuze: Kleur</option>
+                        <option value="white">wit</option>
+                        <option value="mixed">gemengd</option>
+                    </select>
+
+                    <label for="vase_select">vaas bijbestellen</label>
+                    <select name="vases" id="vase_select" required="required">
+                        <option value="" disabled selected>Keuze: Vaas bijbestellen</option>
+                        <option value="yes">Ja</option>
+                        <option value="no">Nee</option>
+                    </select>
+
+                    <label for="binding_select">bindwijze</label>
+                    <select name="bindings" id="binding_select" required="required">
+                        <option value="" disabled selected>Keuze: Bindwijze</option>
+                        <option value="short">kortgebonden stelen</option>
+                        <option value="long">langgebonden stelen</option>
+                    </select>
+
+                    <label for="amount">aantal</label>
+                    <input type="number" name="amount" id="amount" required="required" min="1" placeholder="aantal boeketten">
+
+                    <div class="nav__basket basket--form">
+                        <a href="#">
+                            <p>Voeg toe aan winkelmandje</p>
+                            <!-- <div class="basket-amount">0</div> -->
+                        </a>
+                    </div>
+                </form>
+            </section>
+        </article>
+        <article class="product-tips">
+            <div class="tips">
+                <h2>Hoe een boeket langer bewaren?</h2>
+                <p>Zorg er altijd voor dat je vaas brandschoon is en snijd de stelen van de bloemen onderaan ook best na een viertal dagen eens schuin af met een mesje terwijl je het water ververst. Indien gewenst kan het meegeleverde bloemenvoedsel aan het water toegevoegd worden.</p>
+            </div>
+            <div class="tips-extra">
+                <h2>Verzorgingstips in water</h2>
+                <p>Zorg ervoor dat er geen dorre blaadjes in het water terechtkomen , want die geven bacteriën . Gebruik bij voorkeur leidingwater en voeg eventueel een klein druppeltje javel toe .</p>
+            </div>
         </article>
     </main>
     <footer class="">
@@ -106,7 +157,8 @@
             <p>Deze website werd met trots gemaakt door <a href="#">De Formatie</a></p>
         </div>
     </footer>
+
+    <script src="../_static/js/data.js"></script>
+    <script src="../_static/js/main.js"></script>
 </body>
-<script src="../_static/js/data.js"></script>
-<script src="../_static/js/main.js"></script>
 </html>

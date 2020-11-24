@@ -146,7 +146,7 @@ a {
 
 .nav__basket {
     background-color: #00372b;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 0.6rem 1rem;
 
     font-family: 'adelle';
@@ -545,6 +545,7 @@ footer a:hover {
 @media(min-width: 1000px) {
     .footer-contact ul {
         flex-wrap: nowrap;
+        width: 30rem;
     }
 }
 
@@ -636,4 +637,136 @@ footer a:hover {
     display: inline;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+}
+
+
+/* ------------------------product pagina---------------------- */
+
+.product-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.product-info-img{
+    padding: 1rem;
+    flex-grow: 1;
+    flex-basis: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 3rem;
+
+}
+
+.product-info-img img{
+    width: 50rem;
+    max-width: 100%;
+}
+
+.product-info-description{
+    flex-grow: 0;
+    flex-basis: 35rem;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+}
+
+.product-info-description h2{
+    flex-basis: 100%;
+    text-align: left;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form{
+    width: 35rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+
+    margin-bottom: 3rem;
+}
+
+form label{
+    flex-basis: 100%;
+    margin-bottom: 0.8rem;
+}
+form select{
+    flex-basis: 100%;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0.8rem;
+}
+
+form input{
+    padding: 1rem 0.8rem;
+    margin-right: 0.4rem;
+}
+
+.basket--form{
+    padding: 0.8rem 0.6rem;
+}
+
+.basket--form p{
+    padding: 0;
+}
+
+.product-tips{
+    padding: 1rem;
+
+    margin-bottom: 3rem;
+    
+}
+.product-tips h2{
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.tips-extra h2{
+    font-size: 1.8rem;
+}
+
+
+/* --------------------seizoensdecoratie------------------ */
+
+.article-season{
+    background-color: hsl(103.4, 56.9%, 90%);
+
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.article-season h2{
+    color: #c11462;
+    text-align: left;
+}
+.article-season p {
+    color: #00372b;
+}
+
+.article-season img {
+    width: 40rem;
+    max-width: 100%;
+
+    order: -1;
+}
+
+.season-card-container img {
+    width: 15rem;
 }
