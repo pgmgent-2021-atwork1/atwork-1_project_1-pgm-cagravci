@@ -10,10 +10,15 @@ created: 15/11/2020
     
     const app = {
         initialize: function () {
+            
             //list items on the homepage
             this.createWebshopItems();
             //show the selected product
             this.createProductPage();
+
+            //scroll to top button
+            this.createScrollTop();
+
             //chashe html elements
             this.cacheElements();
             //add click events 
@@ -34,7 +39,7 @@ created: 15/11/2020
                     <section class="card">
                         <img src="${product.image.url}" alt="${product.image.alt}">
                         <div class="card-info">
-                            <a href="../product_boeket/index.html?id=${product.id}">
+                            <a href="product_boeket_index.html?id=${product.id}">
                                 <h4>${product.name} - ${product.type}</h4>
                             </a>
                             <p class="price">${product.price.symbol}${product.price.value}</p>
@@ -62,7 +67,7 @@ created: 15/11/2020
         populateProductPage: function ($product) {
             let url = window.location.search;
             let str = "";
-            if (url === null) {
+            if (url === null) { //are we in the product page? if not, don't do anything
 
             } else {
                 let params = new URLSearchParams(url);
@@ -119,48 +124,25 @@ created: 15/11/2020
                 $product.innerHTML = str;
                 
             }
-            
+        },
+        createScrollTop() {
+            let $body = document.querySelector("body")
+            let str = "";
 
+            str = `
+            <button id="myBtn" title="Go to top">Top</button>`
+            $body.innerHTML += str;
 
-            `
-          
-            <section class="form">
-                <form action="#" method="POST">
-                    <label for="color_select">kleur</label>
-                    <select name="colors" id="color_select" required="required">
-                        <option value="" disabled selected>Keuze: Kleur</option>
-                        <option value="white">wit</option>
-                        <option value="mixed">gemengd</option>
-                    </select>
+        },
+        showBasket($basket){
 
-                    <label for="vase_select">vaas bijbestellen</label>
-                    <select name="vases" id="vase_select" required="required">
-                        <option value="" disabled selected>Keuze: Vaas bijbestellen</option>
-                        <option value="yes">Ja</option>
-                        <option value="no">Nee</option>
-                    </select>
-
-                    <label for="binding_select">bindwijze</label>
-                    <select name="bindings" id="binding_select" required="required">
-                        <option value="" disabled selected>Keuze: Bindwijze</option>
-                        <option value="short">kortgebonden stelen</option>
-                        <option value="long">langgebonden stelen</option>
-                    </select>
-
-                    <label for="amount">aantal</label>
-                    <input type="number" name="amount" id="amount" required="required" min="1" placeholder="aantal boeketten">
-
-                    <div class="nav__basket basket--form">
-                        <a href="#">
-                            <p>Voeg toe aan winkelmandje</p>
-                            <!-- <div class="basket-amount">0</div> -->
-                        </a>
-                    </div>
-                </form>
-            </section>`
         },
         //subfunctions:
         //show the navItems when the users clicks on the hamburgericon
+        goTopFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        },
         showNav(){
             let isHidden = false;
 
@@ -171,7 +153,7 @@ created: 15/11/2020
                 isHidden = true;
                 };
             });
-            //if the navbar is hidden, the click needs to show the navbar. else it needs to hide is.
+            //if the navbar is hidden, the click needs to show the navbar. else it needs to hide it.
             if (isHidden) {
                 this.$navItems.className = "nav_items";
             } else{
@@ -182,12 +164,22 @@ created: 15/11/2020
         cacheElements() {
             this.$hamburger = document.querySelector(".hamburger-icon");
             this.$navItems = document.querySelector(".nav_items");
+            this.$btn = document.querySelector("#myBtn")
+            this.$basket = document.querySelector(".nav__basket")
         },
         registerListeners() {
             this.$hamburger.addEventListener('click', (event) => {
                 this.showNav();
             });
-        },
+
+            this.$btn.addEventListener('click', (event) => {
+                this.goTopFunction();
+            })
+
+            this.$basket.addEventListener('click', (event) => {
+                this.showBasket($basket);
+            })
+        }
     };
     app.initialize();
 })();

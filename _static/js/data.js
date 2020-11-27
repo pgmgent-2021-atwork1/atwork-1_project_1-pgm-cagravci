@@ -9,7 +9,7 @@ const products = [
             symbol: "€",
         },
         image: {
-            url: "../_static/media/images/flowers_webshop_small.png",
+            url: "_static/media/images/flowers_webshop_small.png",
             alt: "boeket small"
         },
 
@@ -24,7 +24,7 @@ const products = [
             symbol: "€",
         },
         image: {
-            url: "../_static/media/images/flowers_webshop_medium.png",
+            url: "_static/media/images/flowers_webshop_medium.png",
             alt: "boeket medium"
         },
 
@@ -39,7 +39,7 @@ const products = [
             symbol: "€",
         },
         image: {
-            url: "../_static/media/images/flowers_webshop_large.png",
+            url: "_static/media/images/flowers_webshop_large.png",
             alt: "boeket large"
         },
 

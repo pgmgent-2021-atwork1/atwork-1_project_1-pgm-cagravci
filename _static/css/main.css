@@ -34,6 +34,18 @@ a {
 
 }
 
+#myBtn{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+    width: 4rem;
+    height: 2rem;
+    background-color: #c11462;
+    border: 1px solid #c43070;
+    cursor: pointer;
+}
+
 .nav__top ul {
     display: flex;
     align-items: center;
