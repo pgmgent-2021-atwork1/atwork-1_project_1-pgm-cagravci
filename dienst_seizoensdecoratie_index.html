@@ -23,13 +23,13 @@
             </div>
 
             <ul class="nav_items hidden">
-                <li class="nav_item"><a href="../index.html">home</a></li>
-                <li class="nav_item"><a href="#">gepersonaliseerd bloemwerk</a></li>
+                <li class="nav_item"><a href="index.html">home</a></li>
+                <li class="nav_item"><a href="dienst_gepersonaliseerd_bloemwerk_index.html">gepersonaliseerd bloemwerk</a></li>
                 <li class="nav_item"><a href="#">trouwboeketten</a></li>
-                <li class="nav_item current"><a href="index.html">seizoensdecoratie</a></li>
+                <li class="nav_item current"><a href="dienst_seizoensdecoratie_index.html">seizoensdecoratie</a></li>
                 <li class="nav_item"><a href="#">rouwwerk</a></li>
                 <li class="nav_item"><a href="#">aankleding</a></li>
-                <li class="nav_item"><a href="../webshop/index.html">webshop</a></li>
+                <li class="nav_item"><a href="webshop_index.html">webshop</a></li>
             </ul>
             <div class="nav__basket">
                 <a href="#">
@@ -60,7 +60,7 @@
                 src="../_static/media/images/flowers_aankleed_locatie.jpeg"
                 alt="bloemen">
         </article>
-        <article>
+        <article class="text--left padding">
             <section>
                 <h2>Zowel voor bedrijven als particulieren</h2>
                 <p>In de cocon van een plaats die je ‘THUIS ‘ mag noemen laten we de seizoenen binnenkomen.</p>
@@ -68,13 +68,13 @@
             </section>
             <section>
                 <h2>Voor de feesttafel</h2>
-                <ul>
+                <ul class="li--style">
                     <li>Receptietafelstukjes</li>
                     <li>Aankleding tafels op de feestlocatie</li>
                 </ul>
             </section>
         </article>
-        <article class="season-card-container">
+        <article class="season-card-container text--left padding">
             <section class="season-card">
                 <h2>Lente</h2>
                 <img src="../_static/media/images/flowers_herfst.jpg" alt="">
@@ -91,28 +91,66 @@
                 <p>Paasbloemen</p>
             </section>
         </article>
-        <article class="season-examples">
+        <section class="cards-header">
             <h2>Enkele voorbeelden</h2>
             <p>Bekijk enkele referentiefotos</p>
-            <img src="../_static/media/images/flowers_examples1.jpeg" alt="">
-            <img src="../_static/media/images/flowers_examples1.jpeg" alt="">
-            <img src="../_static/media/images/flowers_examples1.jpeg" alt="">
+        </section>
+        <article class="card--container season-examples">
+            <section class="card">
+                
+                <a href="#"> 
+                    <img src="_static/media/images/flowers_card1.jpeg" alt="">
+                </a>
+            </section>
+            <section class="card">
+                
+                <a href="#">
+                    <img src="_static/media/images/flowers_card2.jpeg" alt="">
+                </a>
+            </section>
+            <section class="card">
+                
+                <a href="#">
+                    <img src="_static/media/images/flowers_card3.jpeg" alt="">
+                </a>
+            </section>
         </article>
-        <article class="season-form">
-            <h2>Interesse in seizoensdecoratie?</h2>
-            <p>Stuur me gerust een bericht</p>
-            <form action="#" >
+        <article class="season-form center-width padding">
+            <div class="season-form-titel">
+                <h2>Interesse in seizoensdecoratie?</h2>
+                <p>Stuur me gerust een bericht</p>
+            </div>
+            <form action="#" method="#">
+                <h2>Contactforumier</h2>
+                <label for="name">uw naam</label>
+                <input type="text" id="name" name="user_name"/>
 
+                <label for="email">uw e-mailadres</label>
+                <input type="email" id="email" name="user_email"/>
+
+                <label for="telephone">uw telefoonnummer</label>
+                <input type="tel" id="telephone" name="user_tel"/>
+
+                <label for="date">datum van de gelegenheid</label>
+                <input type="date" id="date" name="user_date"/>
+
+                <label for="message">extra informatie</label>
+                <textarea id="message" name="user_message"></textarea>
+
+                <a href="#" class="contactform_action">
+                    <p>verzenden</p>
+                </a>
             </form>
             <section class="season-form-contact">
                 <h2>Rechtstreeks contact</h2>
-                <div>
-                    <p>Je kan me ook rechtstreeks contacteren op </p>
+                    <p>
+                        Je kan me ook rechtstreeks contacteren op
                     <a href="#">0432456765</a>
-                    <p>of via e-mail op </p>
+                    of via e-mail op
                     <a href="#">lievecortier@ailiv.be</a>
-                </div>
+                    </p>
             </section>
+           
         </article>
         <article class="webshop-info">
             <div>

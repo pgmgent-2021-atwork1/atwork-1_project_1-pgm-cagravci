@@ -764,6 +764,21 @@ form input{
     
 }
 
+.padding {
+    padding: 1rem;
+}
+
+.text--left h2{
+    text-align: left;
+}
+.li--style{
+    padding: 1rem 2rem;
+}
+.li--style li{
+    list-style: disc;
+    padding: 0.5rem;
+
+}
 .article-season h2{
     color: #c11462;
     text-align: left;
@@ -778,7 +793,134 @@ form input{
 
     order: -1;
 }
-
+.season-card-container{
+    margin-top: 1rem;
+}
 .season-card-container img {
-    width: 15rem;
+    width: 30rem;
+    max-width: 80%;
+}
+
+.season-card{
+    margin-bottom: 3rem;
+}
+
+.season-examples p{
+    text-align: center;
+}
+
+.season-examples img {
+    box-shadow: 1rem 1rem 0rem #fff8e1;
+}
+
+.season-form p{
+    text-align: center;
+}
+
+@media (min-width: 770px) {
+    .season-form{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 770px) {
+    .season-form-titel{
+        flex-basis: 100%;
+    }
+}
+.season-form form{
+    background-color: #00372b;
+    padding: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 770px) {
+    .season-form form{
+        flex-basis: 50%;
+        flex-grow: 1;
+
+        justify-content: left;
+        text-align: left;
+    }
+}
+.season-form label{
+    color: #d3f4da;
+}
+.season-form input,
+.season-form textarea{
+    background-color: #93c683;
+    border: none;
+    border-radius: 15px;
+    width: 80%;
+
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+@media (min-width: 770px) {
+    .season-form input,
+    .season-form textarea{
+        width: 100%;
+    }
+}
+
+.season-form textarea{
+    height: 6rem;
+}
+
+.contactform_action{
+    
+    border: 1px solid #00b62f;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+
+    margin-bottom: 3rem;
+    flex-basis: 40%;
+}
+
+
+.contactform_action p{
+    color: #d3f4da;
+}
+
+.season-form-contact{
+    background-color: #00372b;
+}
+
+@media (min-width: 770px) {
+    .season-form-contact{
+        flex-basis: 50%;
+        flex-grow: 1;
+        padding-top: 6rem;
+        
+    }
+}
+
+.season-form-contact div{
+    padding: 2rem;
+}
+
+.season-form-contact p{
+    color:  #d3f4da;
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 770px) {
+    .season-form-contact p,
+    .season-form-contact h2{
+        text-align: left;
+    }
+}
+
+.season-form-contact a{
+    color: #00b62f;
+    text-decoration: underline;
 }
