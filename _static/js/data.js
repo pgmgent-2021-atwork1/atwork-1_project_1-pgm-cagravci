@@ -1,3 +1,35 @@
+let navItems = [
+    {
+        name:"home",
+        path: "index.html"
+    },
+    {
+        name:"gepersonaliseerd bloemwerk",
+        path: "dienst_gepersonaliseerd_bloemwerk_index.html"
+    },
+    {
+        name:"trouwboeketten",
+        path: "#"
+    },
+    {
+        name:"seizoensdecoratie",
+        path: "dienst_seizoensdecoratie_index.html"
+    },
+    {
+        name:"rouwwerk",
+        path: "#"
+    },
+    {
+        name:"aankleding",
+        path: "#"
+    },
+    {
+        name:"webshop",
+        path: "webshop_index.html"
+    },
+
+]
+
 const products = [
     {   
         id: "0000",
@@ -109,17 +141,7 @@ let basketOrders = [
         color:"white",
         vase:false,
         binding:"short",
-        findOrder() {
-            let id =0;
-            products.forEach(product => {
-                if (product.id == this.productId) {
-                    id = products.indexOf(product);
-                    
-                }
-                
-            })
-            return id;
-        }
+        orderedProduct:1
 
     },
     {
@@ -128,17 +150,7 @@ let basketOrders = [
         color:"white",
         vase:false,
         binding:"short",
-        findOrder() {
-            let id =0;
-            products.forEach(product => {
-                if (product.id == this.productId) {
-                    id = products.indexOf(product);
-                    
-                }
-                
-            })
-            return id;
-        }
+        orderedProduct:0
 
     }
 ]

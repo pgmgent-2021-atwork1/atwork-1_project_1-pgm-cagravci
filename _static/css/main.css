@@ -1041,14 +1041,18 @@ form input{
 .shopping-product{
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     padding: 1rem;
 }
+.shopping-product-image{
+    width: 30%;
+
+}
 
 .shopping-product-image img{
-    width: 4rem;
-    height: 4rem;
+    width: 100%;
+    height: 100%;
     margin: 1rem;
 }
 
@@ -1112,3 +1116,7 @@ form input{
     background-color: #00b62f;
     
 }
+
+
+/* ----------------checkout---------------- */
+

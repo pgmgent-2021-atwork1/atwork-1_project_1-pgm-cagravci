@@ -10,7 +10,9 @@ created: 15/11/2020
     
     const app = {
         initialize: function () {
-            
+
+            //create navItems
+            this.createNav();
             //list items on the homepage
             this.createWebshopItems();
             //show the selected product
@@ -30,6 +32,35 @@ created: 15/11/2020
             this.cacheElements();
             //add click events 
             this.registerListeners();
+
+        },
+        createNav: function () {
+            this.$navbar = document.querySelector('.nav_items')
+            let str = "";
+            navItems.forEach(item => {
+                str += `<li class="nav_item"><a href="${item.path}">${item.name}</a></li>`
+            });
+
+            this.$navbar.innerHTML = str;
+
+            this.findCurrent();
+        },
+        findCurrent: function () {
+            let $navList = this.$navbar.querySelectorAll('li')
+            let url = window.location.pathname // "/index.html"
+
+            $navList.forEach(nav => {
+                let $a = nav.querySelector('a').pathname //"/index.html"
+                let $value = nav.querySelector('a').attributes[0].nodeValue //#
+               
+                 //if the urlParams match the path of the navItem, give it the class 'current'
+                if ($a == url && $value != '#') {
+                    nav.classList.add("current")
+                } else {
+                    nav.classList.remove('current')
+                }
+            })
+
 
         },
         createWebshopItems:function () {
@@ -94,7 +125,7 @@ created: 15/11/2020
 
                         str += `
                         <section class="form">
-                            <form action="#" method="POST">
+                            <form action="#" id=${productId}>
                                 <label for="color_select">kleur</label>
                                 <select name="colors" id="color_select" required="required">
                                     <option value="" disabled selected>Keuze: Kleur</option>
@@ -119,11 +150,9 @@ created: 15/11/2020
                                 <label for="amount">aantal</label>
                                 <input type="number" name="amount" id="amount" required="required" min="1" placeholder="aantal boeketten">
 
-                                <div class="nav__basket basket--form">
-                                    <a href="#">
+                                <button type="submit" class="nav__basket basket--form">
                                         <p>Voeg toe aan winkelmandje</p>
-                                    </a>
-                                </div>
+                                </button>
                             </form>
                         </section>`
                     }
@@ -208,10 +237,6 @@ created: 15/11/2020
 
         },
         createBasket(){
-            this.$sidePanel = document.querySelector(".darken")
-            if (this.$sidePanel != null) {
-                this.$sidePanel.remove()
-            }
             document.querySelector("header").innerHTML += `
             <article class="darken hidden">
             <div class="shopping-sidePanel">
@@ -268,47 +293,120 @@ created: 15/11/2020
                         <h4>Subtotal</h4>
                         <p>€0</p>
                     </div>
-                    <a class="shopping-bottom-action" href="#">Naar betalen</a>
+                    <a class="shopping-bottom-action" href="checkout_index.html">Naar betalen</a>
                 </section>
             </div>
         </article>`
 
-        let str = "";
-        let $shopping = document.querySelector(".shopping-list")
+        this.populateBasket();
 
-        let subTot = 0;
+        
+        },
+        populateBasket() {
+            let str = "";
+            let $shopping = document.querySelector(".shopping-list")
 
-        basketOrders.forEach(order => {
-            let orderedProduct = products[order.findOrder()] 
-            subTot = subTot + order.amount*orderedProduct.price.value
-            str += `
-                    <div class="shopping-product">
-                        <div class="shopping-product-image">
-                            <img src="${orderedProduct.image.url}" alt="">
-                        </div>
-                    
-                        <div class="shopping-product-info">
-                            <h4>${orderedProduct.name} ${orderedProduct.type}</h4>
-                            <p>${orderedProduct.price.symbol}${orderedProduct.price.value}</p>
-                            <p><span>Kleur</span>${order.color}</p>
-                            <p><span>Vaas bijbestellen</span>${order.vase}</p>
-                            <p><span>Bindwijze:</span>${order.binding}</p>
-                            <a href="#">verwijderen</a>
-                        </div>
-                        <div class="shopping-product-amount">
-                            <input type="text" name="number" id="number" min="0" value="${order.amount}">
-                        </div>
-                    </div>`
-        })
+            //get the orders that need to be shown in the basket, from localstorage
+            let previous = "";
+            if(localStorage.getItem('basketOrders')) {
+                previous = JSON.parse(localStorage.getItem('basketOrders'))
+            }
+            this.basketOrders = [];
+            this.basketOrders.push(...previous)
 
-            $shopping.innerHTML = str;
-            subTot = "€" + subTot;
+            //prepare the innerHTML per order to be shown in the basket, with data we pulled from localestorage
+            let subTot = 0;
+            if (this.basketOrders == null) {
 
-            document.querySelector(".shopping-bottom-total p").innerHTML = subTot;
+            } else if(this.basketOrders != null) {
+                this.basketOrders.forEach(order => {
+                    let orderedProduct = products[order.orderedProduct] 
+                    subTot = subTot + order.amount*orderedProduct.price.value
+                    str += `
+                            <div class="shopping-product">
+                                <div class="shopping-product-image">
+                                    <img src="${orderedProduct.image.url}" alt="">
+                                </div>
+                            
+                                <div class="shopping-product-info">
+                                    <h4>${orderedProduct.name} ${orderedProduct.type}</h4>
+                                    <p>${orderedProduct.price.symbol}${orderedProduct.price.value}</p>
+                                    <p><span>Kleur</span>${order.color}</p>
+                                    <p><span>Vaas bijbestellen</span>${order.vase}</p>
+                                    <p><span>Bindwijze:</span>${order.binding}</p>
+                                    <a href="#">verwijderen</a>
+                                </div>
+                                <div class="shopping-product-amount">
+                                    <input type="text" name="number" id="number" min="0" value="${order.amount}">
+                                </div>
+                            </div>`
+                })
+            } else {}
+    
+                $shopping.innerHTML = str;
+                this.orderOverview = str; //innerHTML is stored for later use, checkout 'these are the ordered items'
+    
+                //add the subtotal to the end of the basket AND add the number of orders to the basket icon
+                subTot = "€" + subTot;
+                document.querySelector(".shopping-bottom-total p").innerHTML = subTot;
+                document.querySelector('.basket-amount').innerHTML = this.basketOrders.length
         },
         showBasket() {
-            this.$sidePanel.className = "darken";
+            this.$sidePanel.classList.remove('hidden')
             
+        },
+        formFunction(e,f) {
+            e.preventDefault();
+            this.formHandling(f);
+            return false
+        },
+        formHandling(f) {
+            console.log(f)
+
+            //extract the form data and put it in an object
+            let order = {
+                productId: f.id,
+                amount: parseInt(f[3].value),
+                color: f[0].value,
+                vase: f[1].value,
+                binding: f[2].value
+            }
+
+            //find wich product is chosen in our products data
+            let id = 0;
+            products.forEach(product => {
+                if (product.id == f.id) {
+                    id = products.indexOf(product);
+                } else {
+                }
+            })
+            order.orderedProduct = id;
+
+            //push new order to localstorage
+            this.basketOrders = [];
+            this.basketOrders.push(order)
+
+            //get the old orders from the localestorage and add these to the new order
+            let previous = "";
+            if(localStorage.getItem('basketOrders')) {
+                previous = JSON.parse(localStorage.getItem('basketOrders'))
+            }
+            this.basketOrders.push(...previous)
+
+            console.log("previous", previous)
+            console.log("basketorders", this.basketOrders)
+            
+            //inject the orders(inc. the new order back to locale storage) this will be used to create the basket
+            localStorage.setItem('basketOrders', JSON.stringify(this.basketOrders))
+
+            //now we have stored the orders, we can use them to populate the basket
+            this.populateBasket();
+            
+
+            
+
+            
+
         },
         //subfunctions:
         //show the navItems when the users clicks on the hamburgericon
@@ -317,21 +415,11 @@ created: 15/11/2020
             document.documentElement.scrollTop = 0;
         },
         showNav(){
-            let isHidden = false;
 
-            //find out if the navbar is hidden or not
-            let navItemsClass = this.$navItems.classList;
-            navItemsClass.forEach(classItem => {
-                if (classItem == "hidden") {
-                isHidden = true;
-                };
-            });
-            //if the navbar is hidden, the click needs to show the navbar. else it needs to hide it.
-            if (isHidden) {
-                this.$navItems.className = "nav_items";
-            } else{
-                this.$navItems.className = "nav_items hidden";
-
+            if (this.$navItems.classList.contains('hidden')){
+                this.$navItems.classList.remove('hidden')
+            } else {
+                this.$navItems.classList.add('hidden')
             }
         },
         cacheElements() {
@@ -339,8 +427,9 @@ created: 15/11/2020
             this.$navItems = document.querySelector(".nav_items");
             this.$btn = document.querySelector("#myBtn")
             this.$basket = document.querySelector(".nav__basket")
+            this.$sidePanel = document.querySelector('.darken')
             this.$close = document.querySelector("#close")
-            this.$sidePanel = document.querySelector(".darken")
+            this.$forms = document.querySelectorAll("form")
         },
         registerListeners() {
             this.$hamburger.addEventListener('click', (event) => {
@@ -355,9 +444,17 @@ created: 15/11/2020
                 this.showBasket();
             })
 
-            this.$close.addEventListener('click', (event) => {
-                this.$sidePanel.className = "darken hidden";
-            } )
+            if (this.$close != null) {
+                this.$close.addEventListener('click', (event) => {
+                    this.$sidePanel.classList.add('hidden')
+                } )
+            }
+
+            this.$forms.forEach(form => {
+                form.addEventListener('submit', (event) => {
+                    this.formFunction(event, form);
+                })
+            })
 
         }
     };

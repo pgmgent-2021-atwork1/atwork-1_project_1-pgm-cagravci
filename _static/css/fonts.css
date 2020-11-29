@@ -1,15 +1,32 @@
 @font-face{
-    font-family: 'adelle';
+    font-family: 'adelle-sans';
     src: url("../media/fonts/adelle-sans-regular-webfont.woff") format("woff"),
     url("../media/fonts/adelle-sans-regular-webfont.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 
+
 @font-face{
-    font-family: 'adelle';
+    font-family: 'adelle-sans';
     src: url("../media/fonts/adelle-sans-bold-webfont.woff") format("woff"),
     url("../media/fonts/adelle-sans-bold-webfont.woff2") format("woff2");
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'adelle-sans';
+    src: url("../media/fonts/adelle-sans-light-webfont.woff") format("woff"),
+    url("../media/fonts/adelle-sans-light-webfont.woff2") format("woff2");
+    font-weight:lighter;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'bilingual';
+    src: url("../media/fonts/bilingual_serif_font-webfont.woff") format("woff"),
+    url("../media/fonts/bilingual_serif_font-webfont.woff2") format("woff2");
+    font-weight: normal;
     font-style: normal;
 }
