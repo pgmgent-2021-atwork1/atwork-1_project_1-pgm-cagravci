@@ -129,7 +129,7 @@
                     <p>Thuislevering in Gent</p>
                     <span>we brengen jouw bestelling tot jou thuis in Gent</span>
                 </div>
-                <div>
+                <div class="delivery-price">
                     <p>€0</p>
                 </div>
             </fieldset>
@@ -146,35 +146,43 @@
                 <label for="message">boodschap</label>
                 <textarea name="message" id="message" cols="30" rows="10" placeholder="boodschap"></textarea>
 
-                <label for="anoniem">anoniem</label>
-                <input type="checkbox" name="anoniem" id="anoniem">
+                <div class="checkout-check">
+                    <label for="anoniem">anoniem</label>
+                    <input type="checkbox" name="anoniem" id="anoniem">
+                </div>
             </fieldset>
         </form>
         <form action="">
             <div class="checkout-title">
                 <h2>Betaling met kredietkaart</h2>
             </div>
-            <fieldset>
+            <fieldset class="checkout-bank">
                 
                 <label for="kaartnummer">kaartnummer</label>
-                <input type="number" name="kaartnummer" id="kaartnummer" min="16" max="16" placeholder="1234 1234 1234 1234">
+                <input type="number" name="kaartnummer" id="kaartnummer" placeholder="1234 1234 1234 1234">
                 
-                <label for="expdate">vervaldatum</label>
-                <input type="date" name="expdate" id="expdate" data-date-format="MM / YY" value="01 / 01" placeholder="MM / JJ">
-
-                <label for="securitycode">securitycode</label>
-                <input type="text" name="securitycode" id="securitycode" placeholder="CVC">
-
-                <label for="sameadres">Facturatieadres is hetzelfde als leveringsadres</label>
-                <input type="checkbox" name="sameadres" id="sameadres">
+                <div class="bank-date">
+                    <div>
+                        <label for="expdate">vervaldatum</label>
+                        <input type="date" name="expdate" id="expdate" data-date-format="MM / YY" value="01 / 01" placeholder="MM / JJ">
+                    </div>
+                    <div>
+                        <label for="securitycode">securitycode</label>
+                        <input type="text" name="securitycode" id="securitycode" placeholder="CVC">
+                    </div>
+                </div>
+                <div class="checkout-check">
+                    <label for="sameadres">Facturatieadres is hetzelfde als leveringsadres</label>
+                    <input type="checkbox" name="sameadres" id="sameadres">
+                </div>
             </fieldset>
         </form>
         <form action="">
             <div class="checkout-title">
-                <h2>Facturatieadres</h2>
+                <h2>Verzendadres</h2>
             </div>
             <fieldset>
-             
+                
                 <label for="name">NAAM</label>
                 <input type="text" name="name" id="name">
 
@@ -182,14 +190,21 @@
                 <input type="text" name="adres" id="adres">
                 <input type="text" name="adres2" id="adres2">
 
-                <label for="gemeente">GEMEENTE</label>
-                <input type="text" name="gemeente" id="gemeente">
+                <div class="checkout-inner-flexcontainer">
+                    <div>
+                        <label for="gemeente">GEMEENTE</label>
+                        <input type="text" name="gemeente" id="gemeente">
+                    </div>
 
-                <label for="provincie">provincie</label>
-                <input type="text" name="provincie" id="provincie">
-                
-                <label for="postcode">POSTCODE</label>
-                <input type="text" name="postcode" id="postcode">
+                    <div>
+                        <label for="provincie">provincie</label>
+                        <input type="text" name="provincie" id="provincie">
+                    </div>
+                    <div>
+                        <label for="postcode">POSTCODE</label>
+                        <input type="text" name="postcode" id="postcode">
+                    </div>
+                </div>
     
                 <label for="land">LAND</label>
                 <select name="land" id="land">
@@ -202,7 +217,7 @@
             <div class="checkout-title">
                 <h2>Overzicht</h2>
             </div>
-            <fieldset>
+            <fieldset class="checkout-overview">
             
                 <div>
                     <p>Subtotaal</p>
@@ -221,6 +236,9 @@
             </fieldset>
 
         </form>
+        <div class="place-order">
+            <a href="index.html">Plaats bestelling</a>
+        </div>
 
     </article>
     </main>

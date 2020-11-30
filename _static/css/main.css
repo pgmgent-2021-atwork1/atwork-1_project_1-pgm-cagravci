@@ -1123,7 +1123,7 @@ form input{
 
 .checkout-container{
     padding: 1rem;
-    border: 1px red solid;
+
     background-color: #f4f4f4;
 }
 
@@ -1183,6 +1183,15 @@ fieldset{
     text-overflow: '';
 }
 
+.checkout-container textarea {
+    flex-basis: 100%;
+    background-color: #fafafa;
+    border:none;
+    border: 1px solid #f4f4f4;
+    margin: 0.5rem 0rem 1.5rem 0rem;
+    padding: 1rem;
+}
+
 .checkout-inner-flexcontainer{
     flex-basis: 100%;
     
@@ -1220,4 +1229,86 @@ fieldset{
 
 .delivery-sugestion p{
     flex-basis: 100%;
+}
+
+.delivery-price{
+    flex-basis: 10%;
+}
+
+.checkout-check{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.checkout-check input{
+    order: -1;
+    margin: 0 1rem 0 0;
+}
+
+.checkout-bank input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.bank-date{
+    flex-basis: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bank-date div{
+    flex-basis: 48%;
+    
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+}
+
+.checkout-container input[type='checkbox'] {
+    flex-basis: 0;
+}
+
+.checkout-overview div{
+    flex-basis: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-overview div:last-child p{
+    font-weight: bold;
+}
+
+.place-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.place-order a{
+    text-align: center;
+
+    margin: 1rem 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #00372b;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: ease 0.4s;
+}
+
+.place-order a:hover{
+    background-color: #00b62f;
+    
 }
