@@ -166,7 +166,7 @@ created: 15/11/2020
             let str = "";
 
             str = `
-            <button id="myBtn" title="Go to top">Top</button>`
+            <button id="myBtn" class="hidden" title="Go to top">Top</button>`
             $body.innerHTML += str;
 
         },
@@ -414,6 +414,16 @@ created: 15/11/2020
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         },
+        hideGoTop() {
+            this.$btn = document.querySelector("#myBtn")
+            let currentPosi = window.scrollY;
+            if (currentPosi > 100) {
+                this.$btn.classList.remove('hidden')
+            } else {
+                this.$btn.classList.add('hidden')
+            }
+        },
+
         showNav(){
 
             if (this.$navItems.classList.contains('hidden')){
@@ -439,6 +449,8 @@ created: 15/11/2020
             this.$btn.addEventListener('click', (event) => {
                 this.goTopFunction();
             })
+
+            window.addEventListener('scroll', this.hideGoTop);
 
             this.$basket.addEventListener('click', (event) => {
                 this.showBasket();
