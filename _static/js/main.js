@@ -303,6 +303,7 @@ created: 15/11/2020
         
         },
         populateBasket() {
+            console.log('I populate basket')
             let str = "";
             let $shopping = document.querySelector(".shopping-list")
 
@@ -334,7 +335,7 @@ created: 15/11/2020
                                     <p><span>Kleur</span>${order.color}</p>
                                     <p><span>Vaas bijbestellen</span>${order.vase}</p>
                                     <p><span>Bindwijze:</span>${order.binding}</p>
-                                    <a href="#">verwijderen</a>
+                                    <a href="#" class="delete" id="${this.basketOrders.indexOf(order)}">verwijderen</a>
                                 </div>
                                 <div class="shopping-product-amount">
                                     <input type="text" name="number" id="number" min="0" value="${order.amount}">
@@ -350,6 +351,15 @@ created: 15/11/2020
                 subTot = "€" + subTot;
                 document.querySelector(".shopping-bottom-total p").innerHTML = subTot;
                 document.querySelector('.basket-amount').innerHTML = this.basketOrders.length
+
+                this.$deleteList = document.querySelectorAll('.delete')
+                this.$deleteList.forEach(del => {
+    
+                    del.addEventListener('click', (event) => {
+                        this.deleteFunction(event, del);
+                    })
+                })
+
         },
         showBasket() {
             this.$sidePanel.classList.remove('hidden')
@@ -382,7 +392,7 @@ created: 15/11/2020
             })
             order.orderedProduct = id;
 
-            //push new order to localstorage
+            //push new order 
             this.basketOrders = [];
             this.basketOrders.push(order)
 
@@ -401,11 +411,6 @@ created: 15/11/2020
 
             //now we have stored the orders, we can use them to populate the basket
             this.populateBasket();
-            
-
-            
-
-            
 
         },
         //subfunctions:
@@ -422,6 +427,33 @@ created: 15/11/2020
             } else {
                 this.$btn.classList.add('hidden')
             }
+        },
+        deleteFunction(event, del) {
+            console.log(event,del)
+
+            //get the data that would be loaded in the basket
+             //get the orders that need to be shown in the basket, from localstorage
+             let previous = "";
+             if(localStorage.getItem('basketOrders')) {
+                 previous = JSON.parse(localStorage.getItem('basketOrders'))
+             }
+             this.basketOrders = [];
+             this.basketOrders.push(...previous)
+             console.log('before delete', this.basketOrders)
+
+             if (parseInt(del.id) > -1) {
+                 this.basketOrders.splice(parseInt(del.id), 1);
+             }
+
+            //inject the orders(inc. the new order back to locale storage) this will be used to create the basket
+            localStorage.setItem('basketOrders', JSON.stringify(this.basketOrders))
+            console.log('after delete', this.basketOrders)
+
+             //now we have stored the orders, we can use them to populate the basket
+            this.populateBasket();
+            
+
+
         },
 
         showNav(){
@@ -440,29 +472,46 @@ created: 15/11/2020
             this.$sidePanel = document.querySelector('.darken')
             this.$close = document.querySelector("#close")
             this.$forms = document.querySelectorAll("form")
+            this.$deleteList = document.querySelectorAll('.delete')
         },
         registerListeners() {
+            
+           
             this.$hamburger.addEventListener('click', (event) => {
                 this.showNav();
             });
 
-            this.$btn.addEventListener('click', (event) => {
-                this.goTopFunction();
-            })
+            if (this.$btn != null) {
+               
+                this.$btn.addEventListener('click', (event) => {
+                    this.goTopFunction();
+                })
+            }
 
+          
             window.addEventListener('scroll', this.hideGoTop);
 
+       
             this.$basket.addEventListener('click', (event) => {
                 this.showBasket();
             })
+            
+            this.$deleteList.forEach(del => {
+    
+                del.addEventListener('click', (event) => {
+                    this.deleteFunction(event, del);
+                })
+            })
 
             if (this.$close != null) {
+
                 this.$close.addEventListener('click', (event) => {
                     this.$sidePanel.classList.add('hidden')
                 } )
             }
 
             this.$forms.forEach(form => {
+ 
                 form.addEventListener('submit', (event) => {
                     this.formFunction(event, form);
                 })

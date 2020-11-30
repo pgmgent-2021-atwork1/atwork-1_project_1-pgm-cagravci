@@ -133,24 +133,3 @@ let examples = [
         ]
     }
 ]
-
-let basketOrders = [
-    {
-        productId: "0001",
-        amount:2,
-        color:"white",
-        vase:false,
-        binding:"short",
-        orderedProduct:1
-
-    },
-    {
-        productId: "0001",
-        amount:2,
-        color:"white",
-        vase:false,
-        binding:"short",
-        orderedProduct:0
-
-    }
-]
