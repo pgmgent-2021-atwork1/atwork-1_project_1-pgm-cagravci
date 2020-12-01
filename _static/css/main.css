@@ -1,4 +1,36 @@
 @import url("fonts.css");
+@font-face{
+    font-family: 'adelle-sans';
+    src: url("../media/fonts/adelle-sans-regular-webfont.woff") format("woff"),
+    url("../media/fonts/adelle-sans-regular-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: 'adelle-sans';
+    src: url("../media/fonts/adelle-sans-bold-webfont.woff") format("woff"),
+    url("../media/fonts/adelle-sans-bold-webfont.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'adelle-sans';
+    src: url("../media/fonts/adelle-sans-light-webfont.woff") format("woff"),
+    url("../media/fonts/adelle-sans-light-webfont.woff2") format("woff2");
+    font-weight:lighter;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'bilingual';
+    src: url("../media/fonts/bilingual_serif_font-webfont.woff") format("woff"),
+    url("../media/fonts/bilingual_serif_font-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 * {
@@ -9,8 +41,8 @@
 }
 
 body{
-    font-family: 'adelle';
-
+    font-family: 'adelle-sans', 'sans-serif';
+    font-weight: normal;
 }
 
 .center-width {
@@ -32,19 +64,25 @@ li {
 a {
     text-decoration: none;
     color: #000;
-
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 #myBtn{
     position: fixed;
-    bottom: 2rem;
+    bottom: 4rem;
     right: 2rem;
 
     width: 4rem;
-    height: 2rem;
-    background-color: #c11462;
-    border: 1px solid #c43070;
+    height: 4rem;
+    /* background-color: #00b62f; */
+    border: none;
     cursor: pointer;
+    /* border-radius: 100%; */
+}
+
+#myBtn:focus{
+    background-color: #00372b;
 }
 
 .nav__top ul {
@@ -60,7 +98,7 @@ a {
 
 @media (min-width: 1000px) {
     .nav__top ul {
-        justify-content: right;
+        justify-content: flex-end;
     }
 }
 .nav__top li {
@@ -214,16 +252,25 @@ h4,
 p,
 a {
     word-break: break-word;
+   
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: 'bilingual','sans-serif';
+    font-weight: bolder;
 }
 
 h1 {
     color: #c11462;
-    font-size: 3.5rem;
+    font-size: 4rem;
 }
 
 h2 {
     color: #93c683;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -399,14 +446,15 @@ p {
     justify-content: center;
 }
 
-.card a {
-    
-}
 
 .card img {
     /* width: 100%; */
 
     width: 20rem;
+    height: 20rem;
+
+    object-fit: cover;
+    object-position: center;
     margin-bottom: 1rem;
 }
 
@@ -515,6 +563,7 @@ footer {
     padding: 1rem;
     background-color: #00372b;
     color: #fff8e1;
+    margin-top: 10%;
 
 }
 
@@ -1039,6 +1088,11 @@ form input{
     width: 2rem;
 }
 
+.shopping-list{
+    overflow-y: scroll;
+    height: 80%;
+}
+
 .shopping-product{
     margin-top: 2rem;
     display: flex;
@@ -1083,10 +1137,11 @@ form input{
 
 .shopping-bottom{
     position: absolute;
-    bottom: 1rem;
+    bottom: 0rem;
     width: 100%;
     padding: 2rem;
     border-top:  1px solid rgba(0, 0, 0,0.2);
+    background-color: #fff;
 }
 
 .shopping-bottom-total{
@@ -1120,11 +1175,16 @@ form input{
 
 
 /* ----------------checkout---------------- */
+.bgcolor--grey{
+    background-color: #f4f4f4;
+}
 
 .checkout-container{
     padding: 1rem;
+}
 
-    background-color: #f4f4f4;
+.checkout-container .shopping-list{
+    height: 25vw;
 }
 
 .checkout-container form{
@@ -1136,6 +1196,9 @@ form input{
 .checkout-title{
     padding: 2rem 1rem;
     border-bottom: #f4f4f4 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .checkout-container h2{
@@ -1165,6 +1228,10 @@ fieldset{
     border:none;
     border: 1px solid #f4f4f4;
     margin: 0.5rem 0rem 1.5rem 0rem;
+}
+
+.required::after{
+    content: " *";
 }
 
 .checkout-container select{

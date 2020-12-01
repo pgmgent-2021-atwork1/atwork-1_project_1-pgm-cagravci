@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="_static/css/main.css">
 
 </head>
+
 <body>
-     <header class="center-width">
+    <header class="center-width">
         <nav class="nav__top">
             <ul>
                 <li class="phonenumber">GSM<a href="tel:+3274992345">0474 99 23 45</a></li>
@@ -24,7 +26,7 @@
             </div>
 
             <ul class="nav_items hidden">
-                
+
             </ul>
             <div class="nav__basket">
                 <a href="#">
@@ -43,204 +45,208 @@
             </div>
         </nav>
     </header>
-  <main class="center-width">
-    <article class="checkout-container">
+    <main class="bgcolor--grey">
+        <article class="checkout-container center-width">
 
-        <form action="">
-            <div class="checkout-title">
-                <h2>Overzicht van uw besteling</h2>
-            </div>
-            <fieldset>
-               
-                <section class="shopping-list">
-                    <div class="shopping-product">
-                        <div class="shopping-product-image">
-                            <img src="_static/media/images/flowers_webshop_large.png" alt="">
-                        </div>
-                    
-                        <div class="shopping-product-info">
-                            <h4>boeket large</h4>
-                            <p>€50</p>
-                            <p><span>Kleur</span>mixed</p>
-                            <p><span>Vaas bijbestellen</span>no</p>
-                            <p><span>Bindwijze:</span>long</p>
-                            <a href="#">verwijderen</a>
-                        </div>
-                        <div class="shopping-product-amount">
-                            <input type="text" name="number" id="number" min="0" value="4">
-                        </div>
-                    </div>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Overzicht van uw besteling</h2>
+                </div>
+                <fieldset>
+
+                    <section class="shopping-list">
+                        <!-- <div class="shopping-product">
+                            <div class="shopping-product-image">
+                                <img src="_static/media/images/flowers_webshop_large.png" alt="">
+                            </div>
+
+                            <div class="shopping-product-info">
+                                <h4>boeket large</h4>
+                                <p>€50</p>
+                                <p><span>Kleur</span>mixed</p>
+                                <p><span>Vaas bijbestellen</span>no</p>
+                                <p><span>Bindwijze:</span>long</p>
+                                <a href="#">verwijderen</a>
+                            </div>
+                            <div class="shopping-product-amount">
+                                <input type="text" name="number" id="number" min="0" value="4">
+                            </div>
+                        </div> -->
                     </section>
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Klanteninformatie</h2>
+                </fieldset>
+            </form>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Klanteninformatie</h2>
+                    <p>* Vereist</p>
+                </div>
+                <fieldset>
+
+                    <label for="email" class="required">EMAIL</label>
+                    <input type="text" name="email" id="email" required="required">
+                </fieldset>
+            </form>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Verzendadres</h2>
+                    <p>* Vereist</p>
+                </div>
+                <fieldset>
+
+                    <label for="name" class="required">NAAM</label>
+                    <input type="text" name="name" id="name" required="required">
+
+                    <label for="adres" class="required">ADRES</label>
+                    <input type="text" name="adres" id="adres" required="required">
+                    <input type="text" name="adres2" id="adres2">
+
+                    <div class="checkout-inner-flexcontainer">
+                        <div>
+                            <label for="gemeente" class="required">GEMEENTE</label>
+                            <input type="text" name="gemeente" id="gemeente" required="required">
+                        </div>
+
+                        <div>
+                            <label for="provincie" class="required">provincie</label>
+                            <input type="text" name="provincie" id="provincie" required="required">
+                        </div>
+                        <div>
+                            <label for="postcode" class="required">POSTCODE</label>
+                            <input type="text" name="postcode" id="postcode" required="required">
+                        </div>
+                    </div>
+
+                    <label for="land" class="required">LAND</label>
+                    <select name="land" id="land" required="required">
+                        <option value="belgium">belgium</option>
+                    </select>
+                </fieldset>
+            </form>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Afhalen of Thuislevering</h2>
+                </div>
+                <fieldset class="delivery-adress">
+
+                    <input type="radio" id="homedelivery" name="homedelivery" value="homedelivery" checked>
+                    <div class="delivery-sugestion">
+                        <p>Thuislevering in Gent</p>
+                        <span>we brengen jouw bestelling tot jou thuis in Gent</span>
+                    </div>
+                    <div class="delivery-price">
+                        <p>€0</p>
+                    </div>
+                </fieldset>
+            </form>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Gepersonaliseerde boodschap</h2>
+                </div>
+                <fieldset>
+
+                    <label for="from">van</label>
+                    <input type="text" name="from" id="from" placeholder="Naam van de schenker">
+
+                    <label for="message">boodschap</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="boodschap"></textarea>
+
+                    <div class="checkout-check">
+                        <label for="anoniem">anoniem</label>
+                        <input type="checkbox" name="anoniem" id="anoniem">
+                    </div>
+                </fieldset>
+            </form>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Betaling met kredietkaart</h2>
+                    <p>* Vereist</p>
+                </div>
+                <fieldset class="checkout-bank">
+
+                    <label for="kaartnummer" class="required">kaartnummer</label>
+                    <input type="number" name="kaartnummer" id="kaartnummer" placeholder="1234 1234 1234 1234" required="required">
+
+                    <div class="bank-date">
+                        <div>
+                            <label for="expdate" class="required">vervaldatum</label>
+                            <input type="date" name="expdate" id="expdate" data-date-format="MM / YY" value="01 / 01"
+                                placeholder="MM / JJ" required="required">
+                        </div>
+                        <div>
+                            <label for="securitycode" class="required">securitycode</label>
+                            <input type="text" name="securitycode" id="securitycode" placeholder="CVC" required="required">
+                        </div>
+                    </div>
+                    <div class="checkout-check">
+                        <label for="sameadres">Facturatieadres is hetzelfde als leveringsadres</label>
+                        <input type="checkbox" name="sameadres" id="sameadres" checked="checked">
+                    </div>
+                </fieldset>
+            </form>
+            <form action="" class="second-adres hidden">
+                <div class="checkout-title">
+                    <h2>Verzendadres</h2>
+                </div>
+                <fieldset>
+
+                    <label for="name">NAAM</label>
+                    <input type="text" name="name" id="name">
+
+                    <label for="adres">ADRES</label>
+                    <input type="text" name="adres" id="adres">
+                    <input type="text" name="adres2" id="adres2">
+
+                    <div class="checkout-inner-flexcontainer">
+                        <div>
+                            <label for="gemeente">GEMEENTE</label>
+                            <input type="text" name="gemeente" id="gemeente">
+                        </div>
+
+                        <div>
+                            <label for="provincie">provincie</label>
+                            <input type="text" name="provincie" id="provincie">
+                        </div>
+                        <div>
+                            <label for="postcode">POSTCODE</label>
+                            <input type="text" name="postcode" id="postcode">
+                        </div>
+                    </div>
+
+                    <label for="land">LAND</label>
+                    <select name="land" id="land">
+                        <option value="belgium">belgium</option>
+                        <option value="turkey">turkey</option>
+                    </select>
+                </fieldset>
+            </form>
+            <form action="">
+                <div class="checkout-title">
+                    <h2>Overzicht</h2>
+                </div>
+                <fieldset class="checkout-overview">
+
+                    <div>
+                        <p>Subtotaal</p>
+                        <p class="subtotal">€ 70</p>
+                    </div>
+
+                    <div>
+                        <p>Thuislevering in Gent</p>
+                        <p>€ 0</p>
+                    </div>
+
+                    <div>
+                        <p>Totaal</p>
+                        <p class="subtotal">€ 70</p>
+                    </div>
+                </fieldset>
+
+            </form>
+            <div class="place-order">
+                <a href="index.html">Plaats bestelling</a>
             </div>
-            <fieldset>
-                
-                <label for="email">EMAIL</label>
-                <input type="text" name="email" id="email">
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Verzendadres</h2>
-            </div>
-            <fieldset>
-                
-                <label for="name">NAAM</label>
-                <input type="text" name="name" id="name">
 
-                <label for="adres">ADRES</label>
-                <input type="text" name="adres" id="adres">
-                <input type="text" name="adres2" id="adres2">
-
-                <div class="checkout-inner-flexcontainer">
-                    <div>
-                        <label for="gemeente">GEMEENTE</label>
-                        <input type="text" name="gemeente" id="gemeente">
-                    </div>
-
-                    <div>
-                        <label for="provincie">provincie</label>
-                        <input type="text" name="provincie" id="provincie">
-                    </div>
-                    <div>
-                        <label for="postcode">POSTCODE</label>
-                        <input type="text" name="postcode" id="postcode">
-                    </div>
-                </div>
-    
-                <label for="land">LAND</label>
-                <select name="land" id="land">
-                    <option value="belgium">belgium</option>
-                </select>
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Afhalen of Thuislevering</h2>
-            </div>
-            <fieldset class="delivery-adress">
-                
-                <input type="radio" id="homedelivery" name="homedelivery" value="homedelivery" checked>
-                <div class="delivery-sugestion">
-                    <p>Thuislevering in Gent</p>
-                    <span>we brengen jouw bestelling tot jou thuis in Gent</span>
-                </div>
-                <div class="delivery-price">
-                    <p>€0</p>
-                </div>
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Gepersonaliseerde boodschap</h2>
-            </div>
-            <fieldset>
-                
-                <label for="from">van</label>
-                <input type="text" name="from" id="from" placeholder="Naam van de schenker">
-
-                <label for="message">boodschap</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="boodschap"></textarea>
-
-                <div class="checkout-check">
-                    <label for="anoniem">anoniem</label>
-                    <input type="checkbox" name="anoniem" id="anoniem">
-                </div>
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Betaling met kredietkaart</h2>
-            </div>
-            <fieldset class="checkout-bank">
-                
-                <label for="kaartnummer">kaartnummer</label>
-                <input type="number" name="kaartnummer" id="kaartnummer" placeholder="1234 1234 1234 1234">
-                
-                <div class="bank-date">
-                    <div>
-                        <label for="expdate">vervaldatum</label>
-                        <input type="date" name="expdate" id="expdate" data-date-format="MM / YY" value="01 / 01" placeholder="MM / JJ">
-                    </div>
-                    <div>
-                        <label for="securitycode">securitycode</label>
-                        <input type="text" name="securitycode" id="securitycode" placeholder="CVC">
-                    </div>
-                </div>
-                <div class="checkout-check">
-                    <label for="sameadres">Facturatieadres is hetzelfde als leveringsadres</label>
-                    <input type="checkbox" name="sameadres" id="sameadres">
-                </div>
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Verzendadres</h2>
-            </div>
-            <fieldset>
-                
-                <label for="name">NAAM</label>
-                <input type="text" name="name" id="name">
-
-                <label for="adres">ADRES</label>
-                <input type="text" name="adres" id="adres">
-                <input type="text" name="adres2" id="adres2">
-
-                <div class="checkout-inner-flexcontainer">
-                    <div>
-                        <label for="gemeente">GEMEENTE</label>
-                        <input type="text" name="gemeente" id="gemeente">
-                    </div>
-
-                    <div>
-                        <label for="provincie">provincie</label>
-                        <input type="text" name="provincie" id="provincie">
-                    </div>
-                    <div>
-                        <label for="postcode">POSTCODE</label>
-                        <input type="text" name="postcode" id="postcode">
-                    </div>
-                </div>
-    
-                <label for="land">LAND</label>
-                <select name="land" id="land">
-                    <option value="belgium">belgium</option>
-                    <option value="turkey">turkey</option>
-                </select>
-            </fieldset>
-        </form>
-        <form action="">
-            <div class="checkout-title">
-                <h2>Overzicht</h2>
-            </div>
-            <fieldset class="checkout-overview">
-            
-                <div>
-                    <p>Subtotaal</p>
-                    <p>€ 70</p>
-                </div>
-                
-                <div>
-                    <p>Thuislevering in Gent</p>
-                    <p>€ 0</p>
-                </div>
-                
-                <div>
-                    <p>Totaal</p>
-                    <p>€ 70</p>
-                </div>
-            </fieldset>
-
-        </form>
-        <div class="place-order">
-            <a href="index.html">Plaats bestelling</a>
-        </div>
-
-    </article>
+        </article>
     </main>
     <footer class="">
         <div class="footer-nav center-width">
@@ -296,8 +302,9 @@
             <p>Deze website werd met trots gemaakt door <a href="#">Cagri Avci</a></p>
         </div>
     </footer>
-  
+
     <script src="_static/js/data.js"></script>
     <script src="_static/js/main.js"></script>
 </body>
+
 </html>
