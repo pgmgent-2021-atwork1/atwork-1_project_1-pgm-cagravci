@@ -344,14 +344,16 @@ created: 15/11/2020
                 })
             } else {}
 
-                $shopping.forEach(list => {
-                    list.innerHTML = str
-                })
+            $shopping.forEach(list => {
+                list.innerHTML = str
+            })
             this.orderOverview = str; //innerHTML is stored for later use, checkout 'these are the ordered items'
 
             //add the subtotal to the end of the basket AND add the number of orders to the basket icon
             subTot = "€" + subTot;
-            document.querySelectorAll(".subtotal").forEach(subtot => {subtot.innerHTML = subTot});
+            document.querySelectorAll(".subtotal").forEach(subtot => {
+                subtot.innerHTML = subTot
+            });
             //document.querySelector('.checkout-overview p').innerHTML = subTot;
             document.querySelector('.basket-amount').innerHTML = this.basketOrders.length
 

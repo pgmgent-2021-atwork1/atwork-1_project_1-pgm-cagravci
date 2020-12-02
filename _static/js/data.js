@@ -1,37 +1,35 @@
-let navItems = [
-    {
-        name:"home",
+let navItems = [{
+        name: "home",
         path: "index.html"
     },
     {
-        name:"gepersonaliseerd bloemwerk",
+        name: "gepersonaliseerd bloemwerk",
         path: "dienst_gepersonaliseerd_bloemwerk_index.html"
     },
     {
-        name:"trouwboeketten",
+        name: "trouwboeketten",
         path: "#"
     },
     {
-        name:"seizoensdecoratie",
+        name: "seizoensdecoratie",
         path: "dienst_seizoensdecoratie_index.html"
     },
     {
-        name:"rouwwerk",
+        name: "rouwwerk",
         path: "#"
     },
     {
-        name:"aankleding",
+        name: "aankleding",
         path: "#"
     },
     {
-        name:"webshop",
+        name: "webshop",
         path: "webshop_index.html"
     },
 
 ]
 
-const products = [
-    {   
+const products = [{
         id: "0000",
         name: "boeket",
         type: "small",
@@ -46,7 +44,7 @@ const products = [
         },
 
     },
-    {   
+    {
         id: "0001",
         name: "boeket",
         type: "medium",
@@ -61,7 +59,7 @@ const products = [
         },
 
     },
-    {   
+    {
         id: "0002",
         name: "boeket",
         type: "large",
@@ -78,31 +76,30 @@ const products = [
     },
 ]
 
-let seasons = [
-    {
+let seasons = [{
         season: "lente",
-        description:"In de lente komt alles tot bloei",
+        description: "In de lente komt alles tot bloei",
         image: [
             "_static/media/images/flowers_lente.jpg"
         ]
     },
     {
         season: "Pasen",
-        description:"Paasbloemen",
+        description: "Paasbloemen",
         image: [
             "_static/media/images/flowers_pasen.jpg"
         ]
     },
     {
         season: "Zomer",
-        description:"Zomerbloemen",
+        description: "Zomerbloemen",
         image: [
             "_static/media/images/flowers_zomer.jpg"
         ]
     },
     {
         season: "Kerst",
-        description:"",
+        description: "",
         image: [
             "_static/media/images/flowers_kerst1.jpg",
             "_static/media/images/flowers_kerst2.jpg",
@@ -114,8 +111,7 @@ let seasons = [
     }
 ]
 
-let examples = [
-    {
+let examples = [{
         type: "season",
         images: [
             "_static/media/images/flowers_examples1.jpeg",
