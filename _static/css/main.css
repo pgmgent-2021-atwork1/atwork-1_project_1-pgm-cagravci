@@ -148,7 +148,7 @@ a {
     padding: 1rem;
 
     position: fixed;
-    top: 15%;
+    top: 30%;
     z-index: 1;
     width: 100%;
     background-color: #fff;
@@ -156,7 +156,7 @@ a {
     font-size: 2rem;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1400px) {
     .nav_items {
         position: static;
         font-size: 1rem;
@@ -187,7 +187,7 @@ a {
     transition: 0.2s ease;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1400px) {
     .nav_item {
         display: list-item;
         margin-right: 0.5rem;
@@ -237,7 +237,7 @@ a {
     width: 2.5rem;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1400px) {
     .hamburger-icon {
         display: none;
     }
@@ -844,7 +844,7 @@ form input{
     order: -1;
 }
 
-@media (min-width: 770px) {
+@media (min-width: 1400px) {
     .article-season img {
         order: 0;
     }
